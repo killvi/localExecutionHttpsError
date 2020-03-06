@@ -10,13 +10,16 @@ Author: Rajaona Jean.
 
 **Table of content**
 
-1. [Prerequistes](## 1. Prerequistes)
-2. [Install your environment](## 2. Install your environment)
-2.1. [Create your project](## 2.1. Create your project)
-2.2. [Run the code locally](#### 2.2. Run the code locally)
-	 + 2.2.1 [Run the app which will handle request](##### 2.2.1 Run the app which will handle request)
-	 + 2.2.2 [Run virtual hub and device](#### 2.2.2 Run virtual hub and device)
-	 + 2.2.3 [Deploy cloud function firebase to handle ](#### 2.2.3 Deploy cloud function firebase to handle )
+1. [Prerequistes](#prerequistes)
+2. [Install your environment](#install-env)
+	+ 2.1. [Create your project](#create-project)
+	+ 2.2. [Run the code locally](#run-locally)
+	 + 2.2.1 [Run the app which will handle request](#run-app)
+	 + 2.2.2 [Run virtual hub and device](#run-hub)
+	 + 2.2.3 [Deploy cloud function firebase to handle ](#sync)
+
+<a name="prerequistes"></a>
+
 # 1. Prerequistes
 
 Be familiar with main concept of local execution.
@@ -30,19 +33,33 @@ Be familiar with main concept of local execution.
 | ngrok | 2.2.8 |
 | node  | 12.15.0 |
 
+<a name="install-env"></a>
+
 # 2. Install your environment
+
+<a name="create-project"></a>
+
 #### 2.1 Create your project
  1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
  2. Click on **New Project**:
- 	![](https://github.com/killvi/localExecutionHttpsError.git/images/new_project)
+ 	![](images/new_project)
  3. Now get your project Id:
-	![](https://github.com/killvi/localExecutionHttpsError.git/images/first_page)
-	![](https://github.com/killvi/localExecutionHttpsError.git/images/project_id)
+	![](images/first_page)
+	![](images/project_id)
+
+<a name="run-locally"></a>
 
 #### 2.2 Run the code locally
 Get the code, run command: `git clone https://github.com/killvi/localExecutionHttpsError.git`
+
+<a name="run-app"></a>
+
 ##### 2.2.1 Run the app which will handle request
+
+<a name="run-hub"></a>
 
 ##### 2.2.2 Run virtual hub and device
 
-##### 2.2.3 Deploy cloud function firebase to handle 
+<a name="sync"></a>
+
+##### 2.2.3 Deploy cloud function firebase to handle SYNC request
