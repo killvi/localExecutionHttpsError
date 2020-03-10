@@ -44,8 +44,9 @@ Be familiar with main concept of local execution.
  2. Click on **New Project**:
  	![alt text](/images/new_project.png)
  3. Now get your project Id:
-	![alt text](/images/first_page.png)
-	![alt text](/images/project_id.png)
+	![alt text](/images/first_page.PNG)
+
+	![alt text](/images/project_id.PNG)
 
 <a name="run-locally"></a>
 
