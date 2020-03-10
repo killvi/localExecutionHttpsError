@@ -42,11 +42,11 @@ Be familiar with main concept of local execution.
 #### 2.1 Create your project
  1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
  2. Click on **New Project**:
- 	[![alt text](/images/new_project.png)](/images/new_project.png)
+ 	![error](/images/new_project.png)
  3. Now get your project Id:
-	![alt text](/images/first_page.PNG)
+	![error](/images/first_page.PNG)
 
-	![alt text](/images/project_id.PNG)
+	![error](/images/project_id.PNG)
 
 <a name="run-locally"></a>
 
@@ -57,11 +57,17 @@ Get the code, run command: `git clone https://github.com/killvi/localExecutionHt
 
 ##### 2.2.1 Run the app which will handle request
 
+Go in *app*  folder and run command:
+1. `npm install`
+2. `npm start`
+
 <a name="run-hub"></a>
 
 ##### 2.2.2 Run virtual hub and devices
 
-Go in *deviceDiscoverable*  folder and run command: `npm start`.
+Go in *deviceDiscoverable*  folder and run command:
+1. `npm install`
+2. `npm start`
 
 In terminal, you should see this:
 ```
