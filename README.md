@@ -12,11 +12,12 @@ Author: Rajaona Jean.
 
 1. [Prerequistes](#prerequistes)
 2. [Get started](#get-started)
-	- 2.1. [Create your project](#create-project)
-	- 2.2. [Run the code locally](#run-locally)
+	- 2.1 [Create your project](#create-project)
+	- 2.2 [Run the code locally](#run-locally)
 		 + 2.2.1 [Run the app which will handle request](#run-app)
 		 + 2.2.2 [Run virtual hub and device](#run-hub)
 		 + 2.2.3 [Deploy cloud function firebase to handle ](#sync)
+	- 2.3 [Install Google Home App](#google-home-app)
 
 <a name="prerequistes"></a>
 
@@ -43,7 +44,7 @@ Be familiar with main concept of local execution.
  1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
  2. Click on **New Project**:
  	![error](/images/new_project.png)
- 3. Now get your project Id:
+ 3. Now be aware of your project Id:
 	![error](/images/first_page.PNG)
 
 	![error](/images/project_id.PNG)
@@ -82,3 +83,18 @@ opc listening { address: '::', family: 'IPv6', port: 7890 }
 <a name="sync"></a>
 
 ##### 2.2.3 Deploy firebase cloud function to handle SYNC request
+
+<a name="google-home-app"></a>
+
+#### 2.3 Install Google Home App
+1. Go on Google Play or Apple store and dowload Google Home.
+2. Configure your Google Home mini to work with your app.
+3. Now add your devices environment. Here it will be your virtual devices. Follow theses steps:
+![error](/images/phone_acceuil.jpg)
+![error](/images/phone_configure.jpg)
+![error](/images/phone_add_skill.jpg)
+
+Search *Local Exec Sample*
+![error](/images/phone_search_skill.jpg)
+
+Now you will see your virtual devices
