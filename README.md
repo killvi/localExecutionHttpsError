@@ -90,7 +90,7 @@ opc listening { address: '::', family: 'IPv6', port: 7890 }
 1. Go on Google Play or Apple store and dowload Google Home.
 2. Configure your Google Home mini to work with your app.
 3. Now add your devices environment. Here it will be your virtual devices. Follow theses steps:
-![error](/images/phone_acceuil.jpg =300x) | ![error](/images/phone_configure.jpg =300x) | ![error](/images/phone_add_skill.jpg =300x)
+<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_acceuil.jpg" height="400px">  | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_configure.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_add_skill.jpg" height="400px">
 
 Search *Local Exec Sample*
 ![error](/images/phone_search_skill.jpg =300x)
