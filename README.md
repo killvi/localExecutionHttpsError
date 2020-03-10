@@ -42,7 +42,7 @@ Be familiar with main concept of local execution.
 #### 2.1 Create your project
  1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
  2. Click on **New Project**:
- 	![alt text](/images/new_project.png)
+ 	[![alt text](/images/new_project.png)](/images/new_project.png)
  3. Now get your project Id:
 	![alt text](/images/first_page.PNG)
 
