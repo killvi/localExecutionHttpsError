@@ -19,6 +19,7 @@
     "typescript": "^3.5.1"
   },
   "scripts": {
+    "init": "firebase --process.argv[0] && node",
     "build": "tsc",
     "lint": "tslint --project .",
     "compile": "tsc --noEmit",
