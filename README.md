@@ -14,7 +14,7 @@ Author: Rajaona Jean.
 2. [Get started](#get-started)
 	- 2.1 [Create your project](#create-project)
 	- 2.2 [Configure your Google Home App with your virtual devices](#config-google-home)
-		 + 2.2.1 [Deploy cloud function firebase to synchronize your devices with your google home app](#sync)
+		 + 2.2.1 [Deploy cloud function firebase to synchronize your virtual devices with your google home app](#sync)
 		 + 2.2.2 [Install Google Home App](#google-home-app)
 	- 2.3 [Run the code locally](#run-locally)
 		 + 2.2.1 [Run the app which will handle smart speaker request](#run-app)
@@ -60,9 +60,40 @@ Be familiar with main concept of local execution.
 
 <a name="sync"></a>
 
-##### 2.2.1 Deploy cloud function firebase to synchronize your devices with your google home app
+##### 2.2.1 Deploy cloud function firebase to synchronize your virtual devices with your google home app
 
 <a name="google-home-app"></a>
+
+Go in *syncHandlerFirebase*  and run these commands on a terminal:
+
+1 . `npm install`
+
+2 . `npm run firebase use ${your-project-id}`
+
+You Should see something like that:
+
+```
+PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run firebase use ${your-project-id}  
+
+> smarthome-provider-placeholder@0.0.1 firebase C:/path/localExecution/https/syncHandlerFirebase
+> firebase "use" "your-project-id"
+
+Now using project ${your-project-id}
+```
+3 . `npm run initHub`
+
+You Should see this:
+```
+PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run initHub
+
+> smarthome-provider-placeholder@0.0.1 initHub C: /path/localExecutionhttpsError/syncHandlerFirebase
+> firebase functions:config:set hub1.leds=16 hub1.channel=1,2,3
+
++  Functions config updated.
+
+Please deploy your functions for the change to take effect by running firebase deploy --only functions
+```
+
 
 ##### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
@@ -80,6 +111,8 @@ Search *the project* you created and add it.
 
 Now you will see your virtual devices
 
+<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_virtual_devices.jpg" height="400px">
+
 <a name="run-locally"></a>
 
 #### 2.2 Run the code locally
@@ -91,6 +124,7 @@ Get the code, run command: `git clone https://github.com/killvi/localExecutionHt
 
 Go in *app*  folder and run command:
 1. `npm install`
+
 2. `npm start`
 
 <a name="run-hub"></a>
@@ -99,13 +133,14 @@ Go in *app*  folder and run command:
 
 Go in *deviceDiscoverable*  folder and run command:
 1. `npm install`
+
 2. `npm start`
 
 In terminal, you should see this:
 ```
-$ C: path/localExecutionhttpsError/deviceDiscoverable> npm start
+PS C: /path/localExecutionhttpsError/deviceDiscoverable> npm start
 
-> fakecandy@0.0.1 start C: path/localExecutionhttpsError/deviceDiscoverable
+> fakecandy@0.0.1 start C: /path/localExecutionhttpsError/deviceDiscoverable
 > ts-node server.ts --device_id hub1 --udp_discovery_port 3311 --udp_discovery_packet A5A5A5A5 --channel 1 --channel 2 --channel 3
 
 discovery listening { address: '0.0.0.0', family: 'IPv4', port: 3311 }

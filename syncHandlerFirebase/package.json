@@ -19,7 +19,7 @@
     "typescript": "^3.5.1"
   },
   "scripts": {
-    "init": "firebase --process.argv[0] && node",
+    "initHub": "firebase functions:config:set hub1.leds=16 hub1.channel=1,2,3",
     "build": "tsc",
     "lint": "tslint --project .",
     "compile": "tsc --noEmit",
