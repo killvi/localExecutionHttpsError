@@ -52,7 +52,8 @@ Be familiar with main concept of local execution.
 	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/first_page.PNG)
 
 	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/project_id.PNG)
-
+ 4. Now give a name that will be seen in google home app when you will add this environment:
+  	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/name_your_project.PNG)
 
 <a name="config-google-home"></a>
 
@@ -66,34 +67,34 @@ Be familiar with main concept of local execution.
 
 Go in *syncHandlerFirebase*  and run these commands on a terminal:
 
-1 . `npm install`
+ 1. `npm install`
 
-2 . `npm run firebase use ${your-project-id}`
+ 2. `npm run firebase use ${your-project-id}`
 
-You Should see something like that:
+	You Should see something like that:
 
-```
-PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run firebase use ${your-project-id}  
+	```
+	PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run firebase use ${your-project-id}  
 
-> smarthome-provider-placeholder@0.0.1 firebase C:/path/localExecution/https/syncHandlerFirebase
-> firebase "use" "your-project-id"
+	> smarthome-provider-placeholder@0.0.1 firebase C:/path/localExecution/https/syncHandlerFirebase
+	> firebase "use" "your-project-id"
 
-Now using project ${your-project-id}
-```
-3 . `npm run initHub`
+	Now using project ${your-project-id}
+	```
+ 3. `npm run initHub`
 
-You Should see this:
-```
-PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run initHub
+	You Should see this:
+	```
+	PS C: /path/localExecutionhttpsError/syncHandlerFirebase> npm run initHub
 
-> smarthome-provider-placeholder@0.0.1 initHub C: /path/localExecutionhttpsError/syncHandlerFirebase
-> firebase functions:config:set hub1.leds=16 hub1.channel=1,2,3
+	> smarthome-provider-placeholder@0.0.1 initHub C: /path/localExecutionhttpsError/syncHandlerFirebase
+	> firebase functions:config:set hub1.leds=16 hub1.channel=1,2,3
 
-+  Functions config updated.
+	+  Functions config updated.
 
-Please deploy your functions for the change to take effect by running firebase deploy --only functions
-```
-
+	Please deploy your functions for the change to take effect by running firebase deploy --only functions
+	```
+ 4. `npm run deploy`
 
 ##### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
