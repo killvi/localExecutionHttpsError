@@ -13,11 +13,13 @@ Author: Rajaona Jean.
 1. [Prerequistes](#prerequistes)
 2. [Get started](#get-started)
 	- 2.1 [Create your project](#create-project)
-	- 2.2 [Run the code locally](#run-locally)
-		 + 2.2.1 [Run the app which will handle request](#run-app)
+	- 2.2 [Configure your Google Home App with your virtual devices](#config-google-home)
+		 + 2.2.1 [Deploy cloud function firebase to synchronize your devices with your google home app](#sync)
+		 + 2.2.2 [Install Google Home App](#google-home-app)
+	- 2.3 [Run the code locally](#run-locally)
+		 + 2.2.1 [Run the app which will handle smart speaker request](#run-app)
 		 + 2.2.2 [Run virtual hub and device](#run-hub)
-		 + 2.2.3 [Deploy cloud function firebase to handle ](#sync)
-	- 2.3 [Install Google Home App](#google-home-app)
+
 
 <a name="prerequistes"></a>
 
@@ -33,6 +35,8 @@ Be familiar with main concept of local execution.
 | Windows | 10 |
 | ngrok | 2.2.8 |
 | node  | 12.15.0 |
+| firebase | '' |
+| google Home app | '' |
 
 <a name="get-started"></a>
 
@@ -43,11 +47,38 @@ Be familiar with main concept of local execution.
 #### 2.1 Create your project
  1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
  2. Click on **New Project**:
- 	![error](/images/new_project.png)
+ 	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/new_project.png)
  3. Now be aware of your project Id:
-	![error](/images/first_page.PNG)
+	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/first_page.PNG)
 
-	![error](/images/project_id.PNG)
+	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/project_id.PNG)
+
+
+<a name="config-google-home"></a>
+
+#### 2.2 Configure your Google Home App with your virtual devices
+
+<a name="sync"></a>
+
+##### 2.2.1 Deploy cloud function firebase to synchronize your devices with your google home app
+
+<a name="google-home-app"></a>
+
+##### 2.2.2 Install Google Home App
+1. Go on Google Play or Apple store and dowload Google Home.
+
+<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_google_home.jpg" height="400px">
+
+2. Configure your Google Home mini to work with your app.
+3. Now add your devices environment. Here it will be your virtual devices. Follow theses steps:
+
+<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_acceuil.jpg" height="400px">  | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_configure.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_add_skill.jpg" height="400px">
+
+Search *the project* you created and add it.
+
+<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_search_skill.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_search_skill_and_add.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_confirm_account_linking.jpg" height="400px">
+
+Now you will see your virtual devices
 
 <a name="run-locally"></a>
 
@@ -80,21 +111,3 @@ $ C: path/localExecutionhttpsError/deviceDiscoverable> npm start
 discovery listening { address: '0.0.0.0', family: 'IPv4', port: 3311 }
 opc listening { address: '::', family: 'IPv6', port: 7890 }
 ```
-<a name="sync"></a>
-
-##### 2.2.3 Deploy firebase cloud function to handle SYNC request
-
-<a name="google-home-app"></a>
-
-#### 2.3 Install Google Home App
-1. Go on Google Play or Apple store and dowload Google Home.
-2. Configure your Google Home mini to work with your app.
-3. Now add your devices environment. Here it will be your virtual devices. Follow theses steps:
-
-<img src="/images/phone_acceuil.jpg" height="400px">  | <img src="/images/phone_configure.jpg" height="400px"> | <img src="/images/phone_add_skill.jpg" height="400px">
-
-Search *Local Exec Sample* and add the project you defined earlier
-
-<img src="/images/phone_search_skill.jpg" height="400px">
-
-Now you will see your virtual devices
