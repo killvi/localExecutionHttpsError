@@ -103,7 +103,7 @@ Go in *syncHandlerFirebase*  folder and run these commands on a terminal:
 	```
  4. `npm run deploy`
  
- [=========]
+=========
  
 Now you will need to configure Google Action Console, but first, some firebase information are needed:
 
@@ -125,17 +125,17 @@ Now you will need to configure Google Action Console, but first, some firebase i
 	
 	smarthome:   https://${region}-${your-project-id}.cloudfunctions.net/smarthome 
 	
-	-----------------------------------------------------------------------------
+	***
 	
 	authorize: https://${region}-${your-project-id}.cloudfunctions.net/authorize
 	
-	-----------------------------------------------------------------------------
+	***
 	
 	token: https://${region}-${your-project-id}.cloudfunctions.net/token
 	
 </center>
 
-[=========]
+=========
  
  1. Now go here: https://console.actions.google.com/
  
@@ -145,7 +145,7 @@ Now you will need to configure Google Action Console, but first, some firebase i
   
  3. Put *authorization* and *token* urls here and save your changes:
  
-  ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/google_action_smarthome_url.PNG)
+  ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/google_action_auth_url.PNG)
 
 ##### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
