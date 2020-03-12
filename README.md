@@ -41,6 +41,7 @@ Be familiar with main concept of local execution.
 <a name="get-started"></a>
 
 # 2. Get started
+Get the code, run command: `git clone https://github.com/killvi/localExecutionHttpsError.git`
 
 <a name="create-project"></a>
 
@@ -95,6 +96,21 @@ Go in *syncHandlerFirebase*  and run these commands on a terminal:
 	Please deploy your functions for the change to take effect by running firebase deploy --only functions
 	```
  4. `npm run deploy`
+ 
+Now you will need to configure Google Action Google, but first, some firebase information are needed:
+
+ 1. Go there: https://firebase.google.com/
+ 2. Click on **Go to console**:
+
+ <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_acceuil.PNG" height="400px">
+
+ 3. Click on your project:
+
+ <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_project.PNG" height="400px">
+
+ 4. Click on functions and these 3 urls:
+
+ <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_functions.PNG" height="400px">
 
 ##### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
@@ -117,7 +133,6 @@ Now you will see your virtual devices
 <a name="run-locally"></a>
 
 #### 2.2 Run the code locally
-Get the code, run command: `git clone https://github.com/killvi/localExecutionHttpsError.git`
 
 <a name="run-app"></a>
 
