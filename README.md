@@ -16,8 +16,11 @@ Author: Rajaona Jean.
 		 + 2.2.1 [Deploy cloud function firebase to synchronize your virtual devices with your google home app](#sync)
 		 + 2.2.2 [Install Google Home App](#google-home-app)
 	- 2.3 [Run the code locally](#run-locally)
-		 + 2.2.1 [Run the app which will handle smart speaker request](#run-app)
-		 + 2.2.2 [Run virtual hub and device](#run-hub)
+		 + 2.3.1 [Run virtual hub and device](#run-hub)
+		 + 2.3.2 [Run the app which will handle smart speaker request](#run-app)
+		 + 2.3.3 [Make it run on your google home device](#on-gg_home)
+3. [Debug Code to see Https error](#debug) 
+		 
 
 
 <a name="prerequistes"></a>
@@ -49,17 +52,17 @@ Get the code, run command: `git clone https://github.com/killvi/localExecutionHt
 
  2. Click on **New Project**:
 
- 	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/new_project.png)
+ 	![error](/images/new_project.png)
 
  3. Now be aware of your project Id:
 
-	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/first_page.PNG)
+	![error](/images/first_page.PNG)
 
-	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/project_id.PNG)
+	![error](/images/project_id.PNG)
 
  4. Now give a name that will be seen in google home app when you will add this environment:
 
-  	![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/name_your_project.PNG)
+  	![error](/images/name_your_project.PNG)
 
 <a name="config-google-home"></a>
 
@@ -110,15 +113,15 @@ Now you will need to configure Google Action Console, but first, some firebase i
 
  2. Click on **Go to console**:
 
- ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_acceuil.PNG)
+ ![error](/images/firebase_acceuil.PNG)
 
  3. Click on your project:
 
- <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_project.PNG" height="400px">
+ <img src="./images/firebase_project.PNG" height="400px">
 
  4. Click on **functions** and get these 3 urls:
 
- ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_functions.PNG)
+ ![error](/images/firebase_functions.PNG)
 
 <table>
 	<tr>
@@ -145,49 +148,42 @@ Now you will need to configure Google Action Console, but first, some firebase i
  
  1. Now go here: https://console.actions.google.com/
  
- 2. Put *smarthome* url here and save your changes:
+ 2. Put *smarthome* url here and **save** your changes:
  
-  ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/google_action_smarthome_url.PNG)
+  ![error](/images/google_action_smarthome_url.PNG)
   
- 3. Put *authorization* and *token* urls here and save your changes:
+ 3. Put *authorization* and *token* urls here and **save** your changes:
  
-  ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/google_action_auth_url.PNG)
+  ![error](/images/google_action_auth_url.PNG)
+
+> Note: The Client Id and the Client Secret are not importante here. Personnaly I put my project Id as Cloud Client Id and a random letter as Client Secret. 
 
 ##### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
 
-<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_google_home.jpg" height="400px">
+<img src="./images/phone_google_home.jpg" height="400px">
 
 2. Configure your Google Home mini to work with your app.
 
-3. Now add your devices environment. Here it will be your virtual devices. Follow theses steps:
+3. Now add your devices environment. Here, it will be your virtual devices. Follow these steps:
 
-<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_acceuil.jpg" height="400px">  | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_configure.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_add_skill.jpg" height="400px">
+<img src="./images/phone_acceuil.jpg" height="400px">  | <img src="./images/phone_configure.jpg" height="400px"> | <img src="./images/phone_add_skill.jpg" height="400px">
 
 Search *the project* you created and add it.
 
-<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_search_skill.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_search_skill_and_add.jpg" height="400px"> | <img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_confirm_account_linking.jpg" height="400px">
+<img src="./images/phone_search_skill.jpg" height="400px"> | <img src="./images/phone_search_skill_and_add.jpg" height="400px"> | <img src="./images/phone_confirm_account_linking.jpg" height="400px">
 
 Now you will see your virtual devices
 
-<img src="https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/phone_virtual_devices.jpg" height="400px">
+<img src="./images/phone_virtual_devices.jpg" height="400px">
 
 <a name="run-locally"></a>
 
 #### 2.2 Run the code locally
 
-<a name="run-app"></a>
-
-##### 2.2.1 Run the app which will handle request
-
-Go in *app*  folder and run command:
-1. `npm install`
-
-2. `npm start`
-
 <a name="run-hub"></a>
 
-##### 2.2.2 Run virtual hub and devices
+##### 2.2.1 Run virtual hub and devices
 
 Go in *deviceDiscoverable*  folder and run command:
 1. `npm install`
@@ -204,3 +200,70 @@ PS C: /path/localExecutionhttpsError/deviceDiscoverable> npm start
 discovery listening { address: '0.0.0.0', family: 'IPv4', port: 3311 }
 opc listening { address: '::', family: 'IPv6', port: 7890 }
 ```
+
+<a name="run-app"></a>
+
+##### 2.2.2 Run the app which will handle requests
+
+Go in *app*  folder and run command:
+1. `npm install`
+
+2. `npm start`
+
+3. `ngrok http 8080 -host-header="localhost:8080"`
+
+4. Get your Ngrok gateway:
+
+	![error](/images/ngrok_url.PNG)
+
+5. Now Go here: https://console.actions.google.com/
+
+6. Put Ngrok gateway url here and save change:
+
+	![error](/images/google_action_test_url.PNG)
+
+<a name="on-gg-home"></a>
+
+##### 2.2.3 Make it run on your google home device
+
+1. You need to configure the scan method of your google home device. To do so go here:
+https://console.actions.google.com/
+
+2. Put following information in *Add device scan configuration*: 
+
+<table>
+	<tr>
+		<td>UDP discovery port in</td>
+		<td>
+			3312
+		</td>
+	</tr>
+	<tr>
+		<td>UDP discovery port out</td> 
+		<td>
+			3311
+		</td>
+	</tr>
+	<tr>
+		<td>UDP discovery address</td> 
+		<td>
+			255.255.255.255
+		</td>
+	</tr>
+	<tr>
+		<td>UDP discovery packet</td> 
+		<td>
+			A5A5A5A5
+		</td>
+	</tr>
+</table>	
+
+![error](/images/google_action_configure_scan.PNG)
+
+3. Now just restart your google home and you will see that with ngrok:
+
+![error](/images/ngrok_get_code.PNG)
+
+<a name="debug"></a>
+
+# Debug Code to see Https error
