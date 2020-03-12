@@ -1,21 +1,21 @@
 /// <reference types="@google/local-home-sdk" />
-import App = smarthome.App;
 import IntentFlow = smarthome.IntentFlow;
 import Intents = smarthome.Intents;
 
 import { IDiscoveryData, ICustomData } from "./types";
 
+import fetch from 'node-fetch';
+
 // Only to handle virtual device
 const cbor = require("cbor");
-const opcStream = require("opc");
 
-export class LocalExecutionApp {
+export default class LocalExecutionApp {
   constructor() {}
 
   // identifyHandlers decode UDP scan data and structured device information.
   // Here i handle a hub device. It triggers reachable devices request, every minutes.
 
-  public async identifyHandler(identifyRequest: IntentFlow.IdentifyRequest): Promise<IntentFlow.IdentifyResponse> {
+  async identifyHandler(identifyRequest: IntentFlow.IdentifyRequest): Promise<IntentFlow.IdentifyResponse> {
     console.log("IDENTIFY request", identifyRequest);
     const device = identifyRequest.inputs[0].payload.device;
     if (device.udpScanData === undefined) {
@@ -41,22 +41,32 @@ export class LocalExecutionApp {
     return identifyResponse;
   }
 
-  public async reachableDevicesHandler(reachableDevicesRequest: IntentFlow.ReachableDevicesRequest): Promise<IntentFlow.ReachableDevicesResponse> {
+  async reachableDevicesHandler(reachableDevicesRequest: IntentFlow.ReachableDevicesRequest): Promise<IntentFlow.ReachableDevicesResponse> {
     console.log("REACHABLE_DEVICES request:", reachableDevicesRequest);
 
     ///////////////////////////////// Only added to test https request ////////////////////////////////////
 
-    this.testHttps("https://www.google.com")
-      .then(
-        (res: any) => {
-          console.log(res);
-        },
-      )
-      .catch(
-        (err: any) => {
-          console.error(err);
-        },
-      );
+    const url = "https://www.google.com";
+    const option = {
+      method: "get",
+      headers: {
+           Accept: "text/plain",
+          'Content-Type': "text/plain",
+          //"Access-Control-Allow-Origin": "*",
+           //"Access-Control-Allow-Headers": "*",
+      },
+    };
+
+    fetch(url, option)
+      .then((res) => {
+        console.log(res);
+        return res;
+      })
+      .catch((error) => {
+        console.error(error);
+        throw error;
+      });
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76,31 +86,12 @@ export class LocalExecutionApp {
         devices,
       },
     };
-    return reachableDevicesResponse;
+    return Promise.resolve(reachableDevicesResponse);
   }
 
   // executeHandler send openpixelcontrol messages corresponding to light device commands.
-  public executeHandler(request: IntentFlow.ExecuteRequest): any {
+  executeHandler(request: IntentFlow.ExecuteRequest): any {
     console.log("EXECUTE request", request);
   }
 
-  public testHttps(url: string): any {
-    const option = {
-      method: "get",
-      headers: {
-          "Accept": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers": "*",
-      },
-  };
-
-    return fetch(url, option)
-  .then((res) => {
-      return res.json();
-  })
-  .catch((error) => {
-    console.error(error);
-    throw error;
-  });
-  }
 }

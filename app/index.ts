@@ -1,7 +1,7 @@
 // Google Home Sdk
 /// <reference types="@google/local-home-sdk" />
 import App = smarthome.App;
-import {LocalExecutionApp} from "./app";
+import LocalExecutionApp from "./app";
 
 const localHomeSdk = new App("1.0.0");
 const localApp = new LocalExecutionApp();
