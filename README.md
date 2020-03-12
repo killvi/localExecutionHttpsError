@@ -9,7 +9,6 @@ Author: Rajaona Jean.
 >  	I used this code to illustrate my problem.
 
 **Table of content**
-
 1. [Prerequistes](#prerequistes)
 2. [Get started](#get-started)
 	- 2.1 [Create your project](#create-project)
@@ -29,14 +28,14 @@ Be familiar with main concept of local execution.
 > more details here: https://developers.google.com/assistant/smarthome/concepts/local
 
 ######  Environment
-|       Name        |  Version                        | 
-|----------| :--------------------------: |
-| Google home nest mini   |        2nd generation     |
-| Windows | 10 |
-| ngrok | 2.2.8 |
-| node  | 12.15.0 |
-| firebase | '' |
-| google Home app | '' |
+| Name                  |    Version     |
+| --------------------- | :------------: |
+| Google home nest mini | 2nd generation |
+| Windows               |       10       |
+| ngrok                 |     2.2.8      |
+| node                  |    12.15.0     |
+| firebase              |       ''       |
+| google Home app       |       ''       |
 
 <a name="get-started"></a>
 
@@ -103,7 +102,7 @@ Go in *syncHandlerFirebase*  folder and run these commands on a terminal:
 	```
  4. `npm run deploy`
  
-=========
+ ***
  
 Now you will need to configure Google Action Console, but first, some firebase information are needed:
 
@@ -121,21 +120,28 @@ Now you will need to configure Google Action Console, but first, some firebase i
 
  ![error](https://raw.githubusercontent.com/killvi/localExecutionHttpsError/master/images/firebase_functions.PNG)
 
-<center>
+<table>
+	<tr>
+		<td>Smarthome</td>
+		<td>
+			https://${region}-${your-project-id}.cloudfunctions.net/smarthome
+		</td>
+	</tr>
+	<tr>
+		<td>Authorize</td> 
+		<td>
+			https://${region}-${your-project-id}.cloudfunctions.net/authorize
+		</td>
+	</tr>
+	<tr>
+		<td> token </td> 
+		<td>
+			https://${region}-${your-project-id}.cloudfunctions.net/token
+		</td>
+	</tr>
+</table>	
 	
-	smarthome:   https://${region}-${your-project-id}.cloudfunctions.net/smarthome 
-	
-	***
-	
-	authorize: https://${region}-${your-project-id}.cloudfunctions.net/authorize
-	
-	***
-	
-	token: https://${region}-${your-project-id}.cloudfunctions.net/token
-	
-</center>
-
-=========
+***
  
  1. Now go here: https://console.actions.google.com/
  
