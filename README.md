@@ -2,6 +2,8 @@
 Writen date: 2020-03-05 10:31:23 Thursday.
 Author: Rajaona Jean.
 
+**The goal here is to let you reproduce https error I encountered.** 
+
 >[Local execution implementation documention from google.](https://developers.google.com/assistant/smarthome/concepts/local)
 >
 > Base code (git repository): 
@@ -28,17 +30,20 @@ Author: Rajaona Jean.
 # 1. Prerequistes
 
 Be familiar with main concept of local execution.
-> more details here: https://developers.google.com/assistant/smarthome/concepts/local
+> More details here: https://developers.google.com/assistant/smarthome/concepts/local
 
-######  Environment
-| Name                  |    Version     |
+######  My Environment
+|              |    Version     |
 | --------------------- | :------------: |
 | Google home nest mini | 2nd generation |
 | Windows               |       10       |
-| ngrok                 |     2.2.8      |
-| node                  |    12.15.0     |
-| firebase              |       ''       |
-| google Home app       |       ''       |
+| Ngrok                 |     2.2.8      |
+| Node                  |    12.15.0     |
+| Firebase              |       ''       |
+| Google Home app       |       ''       |
+| Chrome                | 80.0.3987.132 (Build officiel) (64 bits) |  
+
+> I use an Android as Operating system on my phone but it should work the same way with IOS.
 
 <a name="get-started"></a>
 
@@ -47,8 +52,8 @@ Get the code, run command: `git clone https://github.com/killvi/localExecutionHt
 
 <a name="create-project"></a>
 
-#### 2.1 Create your project
- 1. Go on this url: https://console.actions.google.com/ and connect yuourself with a google account.
+## 2.1 Create your project
+ 1. Go on this url: https://console.actions.google.com/ and connect yourself with a google account.
 
  2. Click on **New Project**:
 
@@ -66,11 +71,11 @@ Get the code, run command: `git clone https://github.com/killvi/localExecutionHt
 
 <a name="config-google-home"></a>
 
-#### 2.2 Configure your Google Home App with your virtual devices
+## 2.2 Configure your Google Home App with your virtual devices
 
 <a name="sync"></a>
 
-##### 2.2.1 Deploy cloud function firebase to synchronize your virtual devices with your google home app
+### 2.2.1 Deploy cloud function firebase to synchronize your virtual devices with your google home app
 
 <a name="google-home-app"></a>
 
@@ -158,14 +163,14 @@ Now you will need to configure Google Action Console, but first, some firebase i
 
 > Note: The Client Id and the Client Secret are not importante here. Personnaly I put my project Id as Cloud Client Id and a random letter as Client Secret. 
 
-##### 2.2.2 Install Google Home App
+### 2.2.2 Install Google Home App
 1. Go on Google Play or Apple store and dowload Google Home.
 
 <img src="./images/phone_google_home.jpg" height="400px">
 
 2. Configure your Google Home mini to work with your app.
 
-3. Now add your devices environment. Here, it will be your virtual devices. Follow these steps:
+3. Now add your devices environment on your google home app. Open it and, follow these steps:
 
 <img src="./images/phone_acceuil.jpg" height="400px">  | <img src="./images/phone_configure.jpg" height="400px"> | <img src="./images/phone_add_skill.jpg" height="400px">
 
@@ -173,7 +178,7 @@ Search *the project* you created and add it.
 
 <img src="./images/phone_search_skill.jpg" height="400px"> | <img src="./images/phone_search_skill_and_add.jpg" height="400px"> | <img src="./images/phone_confirm_account_linking.jpg" height="400px">
 
-Now you will see your virtual devices
+Now you should see your virtual devices
 
 <img src="./images/phone_virtual_devices.jpg" height="400px">
 
@@ -203,7 +208,7 @@ opc listening { address: '::', family: 'IPv6', port: 7890 }
 
 <a name="run-app"></a>
 
-##### 2.2.2 Run the app which will handle requests
+### 2.2.2 Run the app which will handle requests
 
 Go in *app*  folder and run command:
 1. `npm install`
@@ -224,7 +229,7 @@ Go in *app*  folder and run command:
 
 <a name="on-gg-home"></a>
 
-##### 2.2.3 Make it run on your google home device
+### 2.2.3 Make it run on your google home device
 
 1. You need to configure the scan method of your google home device. To do so go here:
 https://console.actions.google.com/
@@ -267,3 +272,28 @@ https://console.actions.google.com/
 <a name="debug"></a>
 
 # Debug Code to see Https error
+
+Here if everything went well, following steps should be checked:
+- [x] Virtual devices are synchronized with your google home app.
+- [x] Your google home device is on.
+- [x] Your code is runnig on your google home device. 
+
+Now to see what happen in your gogle home, go here: [chrome://inspect/#devices](chrome://inspect/#devices), and wait a few moment.
+
+1. You should see your google home device, just below you can see its name: 
+
+![error](/images/chrome_debug.PNG)
+
+2. Now click on *inspect*:
+
+![error](/images/chrome_debug_inspect.PNG)
+
+3. It will open a web view, as followed: 
+
+![error](/images/chrome_debug_on_gg_home.PNG)
+
+4. Here you can see errors i encounter:
+
+![error](/images/error_cors.PNG)
+
+I have cors error and a failed to fecth error when i try t request google but google respond with a 200 status code. 
