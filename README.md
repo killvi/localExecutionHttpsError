@@ -278,9 +278,9 @@ Here if everything went well, following steps should be checked:
 - [x] Your google home device is on.
 - [x] Your code is runnig on your google home device. 
 
-Now to see what happen in your gogle home, go here: [chrome://inspect/#devices](chrome://inspect/#devices), and wait a few moment.
+Now to see what happen in your google home, go here: [chrome://inspect/#devices](chrome://inspect/#devices), and wait a few moment.
 
-1. You should see your google home device, just below you can see its name: 
+1. You should see your google home device and just below you can see its name: 
 
 ![error](/images/chrome_debug.PNG)
 
