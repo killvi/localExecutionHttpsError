@@ -292,7 +292,7 @@ Now to see what happen in your google home, go here: [chrome://inspect/#devices]
 
 ![error](/images/chrome_debug_on_gg_home.PNG)
 
-4. Here you can see errors i encounter:
+4. Here you can see errors i encountered:
 
 ![error](/images/error_cors.PNG)
 
