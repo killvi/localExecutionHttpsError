@@ -296,4 +296,4 @@ Now to see what happen in your gogle home, go here: [chrome://inspect/#devices](
 
 ![error](/images/error_cors.PNG)
 
-I have cors error and a failed to fecth error when i try t request google but google respond with a 200 status code. 
+I have cors error and a failed to fecth error when i try to send a request to google but google respond with a 200 status code. 
